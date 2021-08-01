@@ -37,13 +37,13 @@ const Order = ({ pizza }) => {
 
 	// setting a timer that will cause the title to disappear after 4 seconds
 	useEffect(() => {
-		const timerId = setTimeout(() => setShouldShowTitle(false), 4000);
+		const timerId = setTimeout(() => setShouldShowTitle(false), 1000);
 		return () => clearTimeout(timerId);
 	}, []);
 
 	// setting a timer that will cause the modal to appear after 4 seconds
 	useEffect(() => {
-		const timerId = setTimeout(() => setShouldShowModal(true), 5000);
+		const timerId = setTimeout(() => setShouldShowModal(true), 1000);
 		return () => clearTimeout(timerId);
 	}, []);
 
@@ -81,7 +81,7 @@ const Order = ({ pizza }) => {
 					</motion.div>
 				</motion.div>
 			</AnimateSharedLayout>
-			{shouldShowModal && <Modal closeModal={closeModal} />}
+			<Modal shouldShowModal={shouldShowModal} closeModal={closeModal} />
 		</>
 	);
 };
